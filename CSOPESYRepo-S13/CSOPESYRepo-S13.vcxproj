@@ -105,6 +105,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -128,7 +129,43 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\Documents\GitHub\CSOPESY-MCO\MCO-1\Add.h" />
+    <ClInclude Include="Add.h" />
+    <ClInclude Include="CommandTemplate.h" />
+    <ClInclude Include="Config.h" />
+    <ClInclude Include="ConsoleManager.h" />
+    <ClInclude Include="ConsoleTemplate.h" />
+    <ClInclude Include="CPU.h" />
+    <ClInclude Include="Declare.h" />
+    <ClInclude Include="For.h" />
+    <ClInclude Include="MainConsole.h" />
+    <ClInclude Include="MarqueeConsole.h" />
+    <ClInclude Include="Print.h" />
+    <ClInclude Include="Process.h" />
+    <ClInclude Include="ProcessConsole.h" />
+    <ClInclude Include="Scheduler.h" />
+    <ClInclude Include="Sleep.h" />
+    <ClInclude Include="Subtract.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Add.cpp" />
+    <ClCompile Include="Config.cpp" />
+    <ClCompile Include="ConsoleManager.cpp" />
+    <ClCompile Include="ConsoleTemplate.cpp" />
+    <ClCompile Include="CPU.cpp" />
+    <ClCompile Include="Declare.cpp" />
+    <ClCompile Include="For.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="MainConsole.cpp" />
+    <ClCompile Include="MarqueeConsole.cpp" />
+    <ClCompile Include="Print.cpp" />
+    <ClCompile Include="Process.cpp" />
+    <ClCompile Include="ProcessConsole.cpp" />
+    <ClCompile Include="Scheduler.cpp" />
+    <ClCompile Include="Sleep.cpp" />
+    <ClCompile Include="Subtract.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="config.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
