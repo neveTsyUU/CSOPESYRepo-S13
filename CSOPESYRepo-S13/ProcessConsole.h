@@ -22,7 +22,6 @@ private:
     std::string fileName;
 
     void processSMI() const;
-    void reportUtilities(const std::string& fileName) const;
     void showStatus() const;
     void runSingleStep();
 };

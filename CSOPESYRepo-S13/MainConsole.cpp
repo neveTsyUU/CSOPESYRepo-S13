@@ -57,6 +57,9 @@ void MainConsole::handleCommand(const std::string& input) {
     else if (input == "screen -ls" || input == "e") {
         scheduler->printWorkingAndFinishedProcesses();
     }
+    else if (input == "report-util") {
+        scheduler->reportUtilities("csopesy-log.txt");
+    }
     else if (input == "list") {
         std::cout << "*=========================== COMMANDS ==============================*\n";
         std::cout << "| 'exit'             -> Exit the program                            |\n";
@@ -67,6 +70,8 @@ void MainConsole::handleCommand(const std::string& input) {
         std::cout << "| 'screen -r X'      -> Resume existing screen with name X          |\n";
         std::cout << "| 'scheduler-start'  -> Starts the scheduler declared in config     |\n";
         std::cout << "| 'scheduler-stop'   -> Stops the process scheduler                 |\n";
+        std::cout << "| 'screen -ls'       -> Shows CPU utilization and scheduler report  |\n";
+        std::cout << "| 'report-util'      -> Performs screen -ls but on a text file      |\n";
         std::cout << "*===================================================================*\n";
         std::cout << std::endl;
     }

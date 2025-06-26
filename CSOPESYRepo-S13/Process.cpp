@@ -128,7 +128,7 @@ void Process::createRandomSetOfCommands()
         else if (instructionType == 2) {
             char varName = getRandomVariableName();
             uint16_t value = getRandomUint16();
-            std::string msg = "Value from: " + std::string(1, varName) + " = ";
+            std::string msg = "Displaying value of variable " + std::string(1, varName) + ": ";
             instructionList.push_back(std::make_shared<Print>(msg, value));
             //instructionName.push_back("PRINT");
         }

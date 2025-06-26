@@ -42,6 +42,7 @@ private:
     std::mutex processDispatchMutex;
     std::atomic<bool> isMakingProcesses{ false };
     std::uint32_t processID = 0;
+    std::string fileName;
 public:
     Scheduler(std::shared_ptr<Config> cfg, std::shared_ptr<ConsoleManager> mgr);
     void setCPUList(std::vector<std::shared_ptr<CPU>> cpuList);
@@ -51,6 +52,7 @@ public:
     void stopProcessMaker();
     void enqueueProcess(std::shared_ptr<Process> process);
     void printWorkingAndFinishedProcesses();
+    void reportUtilities(const std::string& fileName) const;
     std::shared_ptr<Process> createNextProcess();
     uint32_t getCpuCycles() const;
 };

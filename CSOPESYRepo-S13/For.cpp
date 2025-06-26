@@ -32,13 +32,13 @@ void For::createRandomSetOfCommands() {
             //instructionName.push_back("PRINT");
         }
         else if (instructionType == 1) {
-            miniInstructionList.push_back(std::make_shared<Print>("This is a message"));
+            miniInstructionList.push_back(std::make_shared<Print>("[FOR] This is a message"));
             //instructionName.push_back("PRINT");
         }
         else if (instructionType == 2) {
             char varName = getRandomVariableName();
             uint16_t value = getRandomUint16();
-            std::string msg = "Value from: " + std::string(1, varName) + " = ";
+            std::string msg = "[FOR] Displaying value of variable: " + std::string(1, varName) + ": ";
             miniInstructionList.push_back(std::make_shared<Print>(msg, value));
             //instructionName.push_back("PRINT");
         }

@@ -46,9 +46,6 @@ void ProcessConsole::process() {
     else if (input == "process-smi") {
         processSMI();
     }
-    else if (input == "report-util") {
-        reportUtilities("csopesy-log.txt");
-    }
     else {
         std::cout << "Unknown command.\n\n";
     }
@@ -90,57 +87,6 @@ void ProcessConsole::processSMI() const
         std::cout << "Finished!" << std::endl;
         std::cout << "=========================" << "\n\n";
     }
-
-}
-
-void ProcessConsole::reportUtilities(const std::string& fileName) const {
-
-    std::ofstream fileUsed(fileName);
-    if (!fileUsed.is_open()) {
-        std::cerr << "Failed to create or open the file: " << fileName << "\n";
-        return;
-    }
-
-    std::cout << "Saving information to " << fileName << "\n";
-
-    if (!assignedProcess->isFinished()) {
-        fileUsed << "\n";
-        fileUsed << "=========================" << "\n";
-        fileUsed << "Process: " << assignedProcess->getName() << "\n";
-        fileUsed << "ID: " << assignedProcess->getId() << "\n";
-        fileUsed << "Created on: " << assignedProcess->getFormattedCreationTime() << "\n";
-        fileUsed << "=========================" << "\n";
-        fileUsed << "Print Log:" << "\n";
-        for (const auto& logLine : assignedProcess->getLogs()) {
-            fileUsed << logLine << "\n";
-        }
-        fileUsed << "=========================" << "\n";
-        fileUsed << "Current instruction line : " << assignedProcess->getCurrentLine() << "\n";
-        fileUsed << "Lines of code: " << assignedProcess->getTotalLines() << "\n";
-        fileUsed << "Assigned CPU: " << assignedProcess->getAssignedCPUId() << "\n";
-        fileUsed << "=========================" << "\n\n";
-    }
-    else {
-        fileUsed << "\n";
-        fileUsed << "=========================" << "\n";
-        fileUsed << "Process: " << assignedProcess->getName() << "\n";
-        fileUsed << "ID: " << assignedProcess->getId() << "\n";
-        fileUsed << "Finished on: " << assignedProcess->getFormattedFinishTime() << "\n";
-        fileUsed << "=========================" << "\n";
-        fileUsed << "Print Log:" << "\n";
-        for (const auto& logLine : assignedProcess->getLogs()) {
-            fileUsed << logLine << "\n";
-        }
-        fileUsed << "\n";
-        fileUsed << "=========================" << "\n";
-        //std::cout << "Current instruction line : " << assignedProcess->getCurrentLine() << "\n";
-        //std::cout << "Lines of code: " << assignedProcess->getTotalLines() << "\n";
-        //std::cout << "Assigned CPU: " << assignedProcess->getAssignedCPUId() << "\n";
-        fileUsed << "Finished!" << std::endl;
-        fileUsed << "=========================" << "\n\n";
-    }
-
-
 
 }
 

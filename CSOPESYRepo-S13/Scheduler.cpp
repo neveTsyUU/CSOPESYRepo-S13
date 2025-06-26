@@ -112,6 +112,59 @@ void Scheduler::printWorkingAndFinishedProcesses() {
     std::cout << ss.str();
 }
 
+void Scheduler::reportUtilities(const std::string& fileName) const {
+    std::ofstream fileUsed(fileName);
+    if (!fileUsed.is_open()) {
+        std::cerr << "Failed to create or open the file: " << fileName << "\n";
+        return;
+    }
+
+    std::cout << "Writing screen -ls information to " << fileName << "!\n";
+
+    uint32_t totalCores = static_cast<uint32_t>(schedulerCPUs.size());
+    uint32_t usedCores = 0;
+
+    for (const auto& cpu : schedulerCPUs) {
+        if (!cpu->getIsFree()) {
+            usedCores++;
+        }
+    }
+
+    double utilization = (totalCores == 0) ? 0.0 : (static_cast<double>(usedCores) / totalCores) * 100.0;
+
+    fileUsed << std::fixed << std::setprecision(2);
+    fileUsed << "CPU Utilization: " << utilization << "%\n";
+    fileUsed << "Cores used: " << usedCores << "\n";
+    fileUsed << "Cores available: " << totalCores - usedCores << "\n";
+    fileUsed << "\n--------------------------\n";
+
+    fileUsed << "Running processes:\n";
+    for (const auto& process : workingProcesses) {
+        if (process->getAssignedCPUId() == -1) continue;
+
+        fileUsed << std::left
+            << std::setw(12) << process->getName()
+            << "(" << process->getFormattedCreationTime() << ")   "
+            << "Core: " << process->getAssignedCPUId() << "   "
+            << std::left << std::setw(5) << process->getCurrentLine()
+            << "/ " << std::left << std::setw(5) << process->getTotalLines()
+            << "\n";
+    }
+
+    fileUsed << "\nFinished processes:\n";
+    for (const auto& process : finishedProcesses) {
+        fileUsed << std::left
+            << std::setw(12) << process->getName()
+            << "(" << process->getFormattedFinishTime() << ")   "
+            << "Finished  "
+            << std::left << std::setw(5) << process->getTotalLines()
+            << "/ " << std::left << std::setw(5) << process->getTotalLines()
+            << "\n";
+    }
+
+    fileUsed.close();
+}
+
 
 std::shared_ptr<Process> Scheduler::createNextProcess()
 {
