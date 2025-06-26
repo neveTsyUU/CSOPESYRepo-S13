@@ -115,7 +115,7 @@ void Process::createRandomSetOfCommands()
         //static std::uniform_int_distribution<int> dist(0, 13);
         //int instructionType = dist(rng);
 
-        int instructionType = std::rand() % 14; // 0 to 13 inclusiv
+        int instructionType = std::rand() % 15; // 0 to 14 only
 
         if (instructionType == 0) {
             instructionList.push_back(std::make_shared<Print>());
@@ -206,6 +206,10 @@ void Process::createRandomSetOfCommands()
             uint8_t sleepTime = getRandomUint8();
             instructionList.push_back(std::make_shared<Sleep>(sleepTime));
             //instructionName.push_back("SLEEP");
+        }
+        else if (instructionType == 14) {
+            uint32_t repeatCount = (std::rand() % 4) + 1;
+            instructionList.push_back(std::make_shared<For>(repeatCount));
         }
     }
 }

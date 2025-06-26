@@ -15,7 +15,7 @@
 int main() {
 
     auto manager = std::make_shared<ConsoleManager>();
-    //ConsoleManager manager;
+
     manager->mainPreInitializationHeader();
 
     while (!manager->initialized()) {
@@ -28,8 +28,6 @@ int main() {
 
     std::vector<std::shared_ptr<CPU>> cpuList;
 
-    //scheduler->setCPUList(cpuList);
-
     auto scheduler = std::make_shared<Scheduler>(config, manager);
 
     for (uint32_t i = 0; i < config->getNumCpu(); ++i) {
@@ -37,7 +35,6 @@ int main() {
     }
 
     scheduler->setCPUList(cpuList);
-
 
     auto marqueeConsole = std::make_unique<MarqueeConsole>("Marquee", manager);
 

@@ -3,6 +3,7 @@
 #include "Process.h"
 #include <memory>
 #include <string>
+#include <fstream>
 
 class ConsoleManager;
 
@@ -18,8 +19,10 @@ public:
 private:
     std::shared_ptr<ConsoleManager> manager;
     std::shared_ptr<Process> assignedProcess;
+    std::string fileName;
 
     void processSMI() const;
+    void reportUtilities(const std::string& fileName) const;
     void showStatus() const;
     void runSingleStep();
 };

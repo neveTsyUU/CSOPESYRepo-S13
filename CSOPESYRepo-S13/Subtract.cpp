@@ -21,9 +21,7 @@ Subtract::Subtract(const std::string& dest)
 void Subtract::execute(Process& process) {
     int16_t result = operand1 - operand2;
 
-    process.log("Subtracted " + std::to_string(operand1) + " - " +
-        std::to_string(operand2) + " = " +
-        std::to_string(result));
+    //process.log("Subtracted " + std::to_string(operand1) + " - " + std::to_string(operand2) + " = " + std::to_string(result));
 }
 
 InstructionType Subtract::getType() const {

@@ -10,7 +10,7 @@ void Sleep::execute(Process& process) {
     process.setSleepTicksRemaining(sleepDuration);
 
     //process.log("Process sleeping for " + std::to_string(sleepDuration) + " ticks");
-    process.log("Process sleeping for " + std::to_string(sleepDuration) + " ticks. Progress: " + std::to_string(process.getCurrentLine()));
+    //process.log("Process sleeping for " + std::to_string(sleepDuration) + " ticks. Progress: " + std::to_string(process.getCurrentLine()));
 
 }
 

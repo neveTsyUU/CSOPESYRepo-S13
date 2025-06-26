@@ -16,5 +16,5 @@ InstructionType Declare::getType() const {
 
 void Declare::execute(Process& process) {
     uint16_t var = value;
-    process.log("Declared variable " + varName + " = " + std::to_string(value));
+    //process.log("Declared variable " + varName + " = " + std::to_string(value));
 }

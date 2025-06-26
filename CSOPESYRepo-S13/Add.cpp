@@ -20,6 +20,7 @@ Add::Add(const std::string& dest)
 
 void Add::execute(Process& process) {
     int16_t result = operand1 + operand2;
+    //process.log("Added " + std::to_string(operand1) + " + " + std::to_string(operand2) + " = " + std::to_string(result));
 }
 
 InstructionType Add::getType() const {
