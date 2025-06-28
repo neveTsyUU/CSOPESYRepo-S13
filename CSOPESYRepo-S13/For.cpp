@@ -25,11 +25,11 @@ void For::createRandomSetOfCommands() {
     miniInstructionList.clear();
 
     for (int i = 0; i < numInstructions; ++i) {
-        int instructionType = std::rand() % 15; // 0 to 14 only
+        int instructionType = std::rand() % 14; // 0 to 13 only
 
         if (instructionType == 0) {
-            miniInstructionList.push_back(std::make_shared<Print>());
-            //instructionName.push_back("PRINT");
+            uint32_t nestedCount = (std::rand() % 4) + 1;
+            miniInstructionList.push_back(std::make_shared<For>(nestedCount));
         }
         else if (instructionType == 1) {
             miniInstructionList.push_back(std::make_shared<Print>("[FOR] This is a message"));
@@ -116,10 +116,6 @@ void For::createRandomSetOfCommands() {
             uint8_t sleepTime = getRandomUint8();
             miniInstructionList.push_back(std::make_shared<Sleep>(sleepTime));
             //instructionName.push_back("SLEEP");
-        }
-        else if (instructionType == 14) {
-            uint32_t nestedCount = (std::rand() % 4) + 1;
-            miniInstructionList.push_back(std::make_shared<For>(nestedCount));
         }
     }
 }

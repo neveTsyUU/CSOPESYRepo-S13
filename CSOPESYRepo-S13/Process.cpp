@@ -108,13 +108,8 @@ void Process::createRandomSetOfCommands()
 
     instructionList.clear();
 
-
     for (uint32_t i = 0; i < numInstructions; ++i)
     {
-        //static std::mt19937 rng(std::random_device{}());
-        //static std::uniform_int_distribution<int> dist(0, 13);
-        //int instructionType = dist(rng);
-
         int instructionType = std::rand() % 15; // 0 to 14 only
 
         if (instructionType == 0) {

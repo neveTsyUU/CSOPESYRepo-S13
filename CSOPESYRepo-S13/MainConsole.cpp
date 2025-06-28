@@ -68,8 +68,8 @@ void MainConsole::handleCommand(const std::string& input) {
         std::cout << "| 'count'            -> Show total registered consoles              |\n";
         std::cout << "| 'screen -s X'      -> Creates a new screen with name X            |\n";
         std::cout << "| 'screen -r X'      -> Resume existing screen with name X          |\n";
-        std::cout << "| 'scheduler-start'  -> Starts the scheduler declared in config     |\n";
-        std::cout << "| 'scheduler-stop'   -> Stops the process scheduler                 |\n";
+        std::cout << "| 'scheduler-start'  -> Creates a bunch of dummy processes          |\n";
+        std::cout << "| 'scheduler-stop'   -> Stops the production of dummy processes     |\n";
         std::cout << "| 'screen -ls'       -> Shows CPU utilization and scheduler report  |\n";
         std::cout << "| 'report-util'      -> Performs screen -ls but on a text file      |\n";
         std::cout << "*===================================================================*\n";

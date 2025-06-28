@@ -32,3 +32,4 @@ void Print::execute(Process& process) {
 
     process.log("\"" + finalMessage + "\"");
 }
+
