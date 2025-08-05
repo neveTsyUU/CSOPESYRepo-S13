@@ -30,9 +30,10 @@
 
 <img width="925" height="182" alt="Step4-2-OPESY" src="https://github.com/user-attachments/assets/ad0c9a7c-90b8-4dca-abd7-b7d196c2d383" />
 
-5. Open the folder and find "mpv2_sft.sln"
+5. Open the folder and find "CSOPESY-MCO2.sln"
 
-<img width="918" height="156" alt="Step5-2-OPESY" src="https://github.com/user-attachments/assets/bb7f6d55-4dee-495d-b815-91bd8d1252d3" />
+<img width="768" height="136" alt="Step5-3-OPESY" src="https://github.com/user-attachments/assets/d1ab81c0-c34d-445f-80b1-42600834131a" />
+
 
 6. Open the program, hover over mpv2_sft and press "Set as Startup Project"
 
