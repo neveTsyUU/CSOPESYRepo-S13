@@ -1,13 +1,17 @@
-# MCO1: Process Scheduler and Command-Line Interface
+# CSOPESY Major Course Output Repository
 ### Created by: CSOPESY Group 10
 - Alog, Lorenz - S13
 - Recto, Rylan - S13
 - Wang, Vince - S13
 - Yu, Steven Aaron - S13
 
+### Repository Contains
+- MCO1: Process Scheduler and Command Line Interface
+- MCO2: Multitasking OS
+
 ### Recommended Software to Run the Program
 - It is recommended to run this solution / code on Visual Studio 2022
-  - It should at least have the C++ desktop development workload installed 
+- It should at least have the C++ desktop development workload installed 
 
 ### Step by Step Process on How to Run the Code
 1. Once you arrived on the repository, click on Code (the green button)
@@ -22,11 +26,15 @@
 
 ![Step3-OPESY](https://github.com/user-attachments/assets/e1497455-e808-4a14-b868-ec7e97e46204)
 
-4. Open the folder and find "CSOPESYRepo-S13.sln"
+4. Open the folder and then choose which MCO to open. (For this demonstration, we will open MCO2)
 
-![Step4-OPESY](https://github.com/user-attachments/assets/2f229ddb-df20-4619-b9ad-2718a8651caf)
+<img width="925" height="182" alt="Step4-2-OPESY" src="https://github.com/user-attachments/assets/ad0c9a7c-90b8-4dca-abd7-b7d196c2d383" />
 
-5. Open the program, hover over MCO1 and press "Set as Startup Project"
+5. Open the folder and find "mpv2_sft.sln"
+
+<img width="918" height="156" alt="Step5-2-OPESY" src="https://github.com/user-attachments/assets/bb7f6d55-4dee-495d-b815-91bd8d1252d3" />
+
+6. Open the program, hover over mpv2_sft and press "Set as Startup Project"
 
 ![Step5-OPESY](https://github.com/user-attachments/assets/161d16fe-3738-45ca-a3de-6f3796ac31cd)
 
